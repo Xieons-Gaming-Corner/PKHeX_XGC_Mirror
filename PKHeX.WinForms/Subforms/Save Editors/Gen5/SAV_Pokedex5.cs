@@ -43,7 +43,6 @@ public partial class SAV_Pokedex5 : Form
             CB_Species.SelectedValue = (int)Dex.InitialSpecies;
         else
             LB_Species.SelectedIndex = 0;
-        CB_Species.KeyDown += WinFormsUtil.RemoveDropCB;
     }
 
     private readonly CheckBox[] CP;
@@ -115,7 +114,6 @@ public partial class SAV_Pokedex5 : Form
 
     private void GetEntry(bool skipFormRepop = false)
     {
-        // Load Bools for the data
         int pk = species;
 
         // Load Partitions

@@ -42,7 +42,6 @@ public partial class SAV_PokedexORAS : Form
         CHK_NationalDexActive.Checked = Zukan.IsNationalDexMode;
         CHK_NationalDexUnlocked.CheckedChanged += (_, _) => CHK_NationalDexActive.Checked = CHK_NationalDexUnlocked.Checked;
         TB_Spinda.Text = Zukan.Spinda.ToString("X8");
-        CB_Species.KeyDown += WinFormsUtil.RemoveDropCB;
     }
 
     private readonly CheckBox[] CP;
@@ -114,7 +113,6 @@ public partial class SAV_PokedexORAS : Form
 
     private void GetEntry(bool skipFormRepop = false)
     {
-        // Load Bools for the data
         int pk = species;
 
         L_Spinda.Visible = TB_Spinda.Visible = pk == (int)Species.Spinda;
